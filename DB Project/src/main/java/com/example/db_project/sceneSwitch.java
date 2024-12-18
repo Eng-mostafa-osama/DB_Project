@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class sceneSwitch {
 
@@ -17,7 +18,8 @@ public class sceneSwitch {
     @FXML
     public void SwitchToSignLog(ActionEvent e) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/Sign_Login.fxml"));
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sign_Login.fxml")));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
