@@ -16,10 +16,20 @@ public class sceneSwitch {
 
     private Parent root;
     @FXML
-    public void SwitchToSignLog(ActionEvent e) throws IOException {
+    public void SwitchToSignIn(ActionEvent e) throws IOException {
 
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sign_Login.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignIn.fxml")));
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void SwitchToLogIn(ActionEvent e) throws IOException {
+
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("logIn.fxml")));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -26,13 +26,18 @@
                   <Insets top="72.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="signLogin" alignment="CENTER_RIGHT" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToSignLog" style="-fx-background-color: crimson;" text="Sign up / Login" translateX="480.0">
+            <Button fx:id="signUp" alignment="CENTER_RIGHT" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToSignIn" style="-fx-background-color: crimson;" text="Sign up |" translateX="450.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
                   <Insets top="72.0" />
                </HBox.margin>
+            </Button>
+            <Button fx:id="logIn" alignment="CENTER_RIGHT" layoutX="231.0" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToLogIn" style="-fx-background-color: crimson;" text="Log In" translateX="450.0" translateY="36.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
          </children>
       </HBox>
