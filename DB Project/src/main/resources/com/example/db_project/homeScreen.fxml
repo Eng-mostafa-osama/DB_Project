@@ -6,38 +6,51 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="600.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db_project.sceneSwitch">
    <children>
-      <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: crimson;">
+      <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="116.0" prefWidth="800.0" style="-fx-background-color: crimson;">
          <children>
             <ImageView fitHeight="90.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../application/ahly%20logo.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" style="-fx-background-color: Crimson;" text="News">
+            <Button mnemonicParsing="false" style="-fx-background-color: Crimson;" text="News" textFill="WHITE">
                <HBox.margin>
                   <Insets right="10.0" top="72.0" />
                </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: crimson;" text="Button">
+            <Button mnemonicParsing="false" style="-fx-background-color: crimson;" text="Videos" textFill="WHITE">
                <HBox.margin>
                   <Insets top="72.0" />
                </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Button>
-            <Button fx:id="signUp" alignment="CENTER_RIGHT" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToSignIn" style="-fx-background-color: crimson;" text="Sign up |" translateX="450.0">
+            <Button fx:id="signUp" alignment="CENTER_RIGHT" layoutY="1.0" mnemonicParsing="false" onAction="#SwitchToSignIn" style="-fx-background-color: crimson;" text="Sign up |" textFill="WHITE" translateX="420.0" translateY="-1.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
                   <Insets top="72.0" />
                </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Button>
-            <Button fx:id="logIn" alignment="CENTER_RIGHT" layoutX="231.0" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToLogIn" style="-fx-background-color: crimson;" text="Log In" translateX="450.0" translateY="36.0">
+            <Button fx:id="logIn" alignment="CENTER_RIGHT" layoutX="231.0" layoutY="500.0" mnemonicParsing="false" onAction="#SwitchToLogIn" style="-fx-background-color: crimson;" text="Log In" textFill="WHITE" translateX="420.0" translateY="34.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Button>
          </children>
       </HBox>
