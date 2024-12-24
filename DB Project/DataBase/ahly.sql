@@ -117,3 +117,23 @@ check (Samount>0);
 alter table expenses
 add constraint chk_Eamount
 check (Eamount>0);
+alter table user 
+rename users;
+alter table user
+add column UPassword varchar(35);
+alter table user
+add column Uusername varchar(35)
+ after ULname;
+ 
+ insert into users(UFname,ULname,Uusername,Uage,UPhoneNumber,UEmail,UPassword)
+values ('mostafa',
+'osama',
+'darsh',
+20,
+01155424909,
+'mostafaosama3060@gmail.com',
+'12345678910');
+alter table users
+add isOwner bool default 0;
+update  users 
+set isOwner = 1 where UserID =1 ;

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db_project.sceneSwitch">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -37,7 +37,7 @@
                   <Font size="43.0" />
                </font>
             </Label>
-            <Button layoutX="148.0" layoutY="520.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" text="Login" />
+            <Button fx:id="signIn" layoutX="148.0" layoutY="520.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="39.0" prefWidth="79.0" text="Login" />
             <TextField fx:id="signLname" layoutX="179.0" layoutY="192.0" prefHeight="31.0" prefWidth="128.0" promptText="last name" />
             <Label layoutX="189.0" layoutY="152.0" text="last name" textFill="WHITE">
                <font>
@@ -61,8 +61,19 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="signEmail1" layoutX="29.0" layoutY="269.0" prefHeight="31.0" prefWidth="279.0" promptText="Username" />
+            <TextField fx:id="signUsername" layoutX="29.0" layoutY="269.0" prefHeight="31.0" prefWidth="128.0" promptText="Username" />
             <Label layoutX="29.0" layoutY="232.0" text="Username" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="backArrow" fitHeight="72.0" fitWidth="58.0" layoutX="8.0" layoutY="16.0" onMouseClicked="#GoToPreviousPage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../application/arrow.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="signAge" layoutX="179.0" layoutY="269.0" prefHeight="31.0" prefWidth="122.0" promptText="age" />
+            <Label layoutX="179.0" layoutY="232.0" text="Age" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

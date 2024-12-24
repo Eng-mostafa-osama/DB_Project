@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db_project.sceneSwitch">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -66,6 +66,11 @@
                </font>
             </Label>
             <Button layoutX="147.0" layoutY="431.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" text="Login" />
+            <ImageView fitHeight="73.0" fitWidth="63.0" onMouseClicked="#GoToPreviousPage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../application/arrow.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </right>
