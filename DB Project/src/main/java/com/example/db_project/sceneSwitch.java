@@ -128,7 +128,9 @@ public class sceneSwitch {
 
     @FXML
     public void validateLogin(ActionEvent event) {
+
         String username = loginName.getText();
+
         String password = loginPassword.getText();
 
         if (username.isEmpty() || password.isEmpty()) {
@@ -151,12 +153,15 @@ public class sceneSwitch {
                     // Compare stored password with user input
                     if (storedPassword.equals(password)) {
                         System.out.println("Login successful!");
+                        System.out.println("true");
                         // Redirect to the next scene or perform actions on successful login
                     } else {
                         System.out.println("Invalid username or password!");
+                        System.out.println("false");
                     }
                 } else {
                     System.out.println("Username not found!");
+                    System.out.println("false");
                 }
             }
         } catch (Exception e) {

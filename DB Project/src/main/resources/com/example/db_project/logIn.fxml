@@ -65,7 +65,7 @@
                   <Font size="60.0" />
                </font>
             </Label>
-            <Button layoutX="147.0" layoutY="431.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" text="Login" />
+            <Button fx:id="LogIn" layoutX="147.0" layoutY="431.0" mnemonicParsing="false" onAction="#validateLogin" prefHeight="39.0" prefWidth="79.0" text="Login" />
             <ImageView fitHeight="73.0" fitWidth="63.0" onMouseClicked="#GoToPreviousPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../application/arrow.png" />
