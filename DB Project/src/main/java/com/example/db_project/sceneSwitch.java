@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -23,6 +24,9 @@ public class sceneSwitch {
     private TextField loginName;
     @FXML
     private PasswordField loginPassword;
+
+    @FXML
+    private Label errMsg;
 
     @FXML
     private TextField signFname;
@@ -133,8 +137,11 @@ public class sceneSwitch {
 
         String password = loginPassword.getText();
 
+        boolean ownerShip =true;
+
         if (username.isEmpty() || password.isEmpty()) {
             System.out.println("Username or password cannot be empty!");
+            errMsg.setVisible(true);
             return;
         }
         try (Connection conn = DatabaseConnector.connect()) {
@@ -153,7 +160,18 @@ public class sceneSwitch {
                     // Compare stored password with user input
                     if (storedPassword.equals(password)) {
                         System.out.println("Login successful!");
-                        System.out.println("true");
+                        query = "SELECT UPassword FROM users WHERE isOwner = 'true' ";
+                        try (PreparedStatement chkOwner = conn.prepareStatement(query)) {
+                            stmt.setBoolean(1, ownerShip);
+                            ResultSet rsOwner = stmt.executeQuery();
+                        if(rsOwner.next() == true) {
+                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("OwnerHomeScreen.fxml"));
+                            Scene homePage = new Scene(fxmlLoader.load(), 800, 600);
+                            stage.setTitle("AL Ahly jr's ");
+                            stage.setResizable(false);
+                            stage.setScene(homePage);
+                            stage.show();
+                        }}
                         // Redirect to the next scene or perform actions on successful login
                     } else {
                         System.out.println("Invalid username or password!");
