@@ -1,6 +1,5 @@
 create database Ahly;
 use ahly;
-
 -- Table: User
 CREATE TABLE User (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,6 +59,7 @@ CREATE TABLE Expenses (
 );
 
 alter table teams
+add ExpenseID int,
 add FOREIGN KEY (ExpenseID) REFERENCES Expenses(ExpenseID) ;
 
 -- Table: Team Members
@@ -119,9 +119,9 @@ add constraint chk_Eamount
 check (Eamount>0);
 alter table user 
 rename users;
-alter table user
+alter table users
 add column UPassword varchar(35);
-alter table user
+alter table users
 add column Uusername varchar(35)
  after ULname;
  
