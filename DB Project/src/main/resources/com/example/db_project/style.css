@@ -1,0 +1,31 @@
+.MenuItems:hover {
+    -fx-border-color: #660099;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.sideBarItems{
+    -fx-background-color: #146886;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+.UsideBarItems{
+    -fx-background-color: #146886;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.button {
+    -fx-background-color: transparent;  /* Transparent background */
+    -fx-border-color: red;              /* Red border */
+    -fx-border-width: 2px;              /* Border thickness */
+    -fx-text-fill: red;                 /* Red text color */
+    -fx-font-size: 14px;                /* Font size */
+    -fx-padding: 10px 20px;             /* Padding for button */
+    -fx-border-radius: 5px;            /* Rounded corners */
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    -fx-background-color: white;    /* Crimson background on hover */
+    -fx-text-fill: white;              /* White text on hover */
+}

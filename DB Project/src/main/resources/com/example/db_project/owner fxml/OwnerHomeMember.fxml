@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db_project.OwnerMembersScreen">
+   <children>
+      <BorderPane layoutX="282.0" layoutY="219.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="329.0" layoutY="-52.0" prefHeight="18.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <HBox layoutX="198.0" layoutY="27.0" prefHeight="73.0" prefWidth="606.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="27.0">
+                     <children>
+                        <Button fx:id="Subsriptions" mnemonicParsing="false" onAction="#SwitchToSub" prefHeight="73.0" prefWidth="250.0" style="-fx-background-color: white;" styleClass="MenuItems" text="Subsriptions">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/subscription.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="teamManagement" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="250.0" style="-fx-background-color: white;" styleClass="MenuItems" text="team Managemnt">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/group.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="69.0" layoutY="49.0" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MenuBack" layoutX="69.0" layoutY="49.0" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="27.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../application/more.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="Slider" prefHeight="529.0" prefWidth="200.0" style="-fx-background-color: #D0041C;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="50.0" layoutY="21.0" prefHeight="484.0" prefWidth="200.0" style="-fx-background-color: #D0041C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+                     <children>
+                        <Button fx:id="memberManagement" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="Member Managment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/membership.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Expenses" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="Expenses" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/budget.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Reporting" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="120.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="Users Reports" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/dashboard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="userAccount" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="My Account" textFill="WHITE" translateX="2.0" translateY="240.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="ViewMembers" layoutX="8.0" layoutY="2.0" mnemonicParsing="false" onAction="#viewMembers" prefHeight="35.0" prefWidth="125.0" text="View Members" />
+                  <Button fx:id="AddMembers" layoutX="165.0" layoutY="2.0" mnemonicParsing="false" onAction="#addMembers" prefHeight="35.0" prefWidth="125.0" text="Add Members" />
+                  <Button fx:id="EditMembers" layoutX="310.0" layoutY="2.0" mnemonicParsing="false" onAction="#editMembers" prefHeight="35.0" prefWidth="125.0" text="Edit Members" />
+                  <Button fx:id="DeleteMembers" layoutX="461.0" layoutY="2.0" mnemonicParsing="false" onAction="#deleteMembers" prefHeight="35.0" prefWidth="125.0" text="Delete Member" />
+                  <Label fx:id="searchLabel" layoutX="20.0" layoutY="49.0" text="Enter the name of the member you want to see" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memberSearch" layoutX="15.0" layoutY="74.0" prefHeight="34.0" prefWidth="570.0" visible="false" />
+                  <TableView fx:id="memberTable" layoutX="12.0" layoutY="106.0" prefHeight="316.0" prefWidth="577.0" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colId" prefWidth="59.0" text="UserID" />
+                        <TableColumn fx:id="colname" prefWidth="154.0" text="Full name">
+                           <columns>
+                            <TableColumn fx:id="colFname" prefWidth="91.0" text="First Name" />
+                              <TableColumn fx:id="colLname" prefWidth="75.0" text="Last name" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="179.0" text="Contact info">
+                           <columns>
+                              <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
+                              <TableColumn fx:id="colPhone" prefWidth="75.0" text="Phone number" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colSubStatus" prefWidth="141.0" text="Sub Status" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="addFnameLabel" layoutX="36.0" layoutY="61.0" text="First Name" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addFirstName" layoutX="36.0" layoutY="96.0" visible="false" />
+                  <Label fx:id="addLnameLabel" layoutX="207.0" layoutY="61.0" text="Last name" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addLastName" layoutX="207.0" layoutY="96.0" visible="false" />
+                  <Label fx:id="addPhoneLabel" layoutX="36.0" layoutY="157.0" text="Phone number" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addPhone" layoutX="36.0" layoutY="192.0" visible="false" />
+                  <Label fx:id="addEmailLabel" layoutX="202.0" layoutY="157.0" text="Email" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addEmail" layoutX="202.0" layoutY="192.0" prefHeight="25.0" prefWidth="225.0" visible="false" />
+                  <ChoiceBox fx:id="subType" layoutX="37.0" layoutY="274.0" prefHeight="25.0" prefWidth="183.0" visible="false" />
+                  <Label fx:id="subTypeLabel" layoutX="36.0" layoutY="240.0" text="Subscriptions Type" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addFinish" layoutX="45.0" layoutY="400.0" mnemonicParsing="false" onAction="#addMemberToDatabase" prefHeight="38.0" prefWidth="85.0" text="Finish" visible="false" />
+                  <Label fx:id="editSearchLabel" layoutX="23.0" layoutY="63.0" text="type the name of the member ir thier ID" visible="false" />
+                  <TextField fx:id="editSearch" layoutX="20.0" layoutY="84.0" prefHeight="25.0" prefWidth="283.0" visible="false" />
+                  <Label fx:id="editChoice" layoutX="31.0" layoutY="130.0" text="Choose What do you want to edit" visible="false" />
+                  <RadioButton fx:id="editFnameR" layoutX="30.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewEdit" text="First name" visible="false" />
+                  <RadioButton fx:id="editSubR" layoutX="461.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewEdit" text="Subscription status" visible="false" />
+                  <RadioButton fx:id="editEmailR" layoutX="373.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewEdit" text="Email" visible="false" />
+                  <RadioButton fx:id="editPhoneR" layoutX="257.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewEdit" text="Phone Number" visible="false" />
+                  <RadioButton fx:id="editLnameR" layoutX="142.0" layoutY="159.0" mnemonicParsing="false" onAction="#viewEdit" text="Last name" visible="false" />
+                  <Label fx:id="editFnameLabel" layoutX="25.0" layoutY="196.0" text="First Name" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editFirstName" layoutX="25.0" layoutY="231.0" visible="false" />
+                  <Label fx:id="editLnameLabel" layoutX="189.0" layoutY="196.0" text="Last name" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editLastName" layoutX="196.0" layoutY="231.0" visible="false" />
+                  <Label fx:id="editPhoneLabel" layoutX="25.0" layoutY="292.0" text="Phone number" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editPhone" layoutX="25.0" layoutY="327.0" visible="false" />
+                  <Label fx:id="editEmailLabel" layoutX="191.0" layoutY="292.0" text="Email" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editEmail" layoutX="191.0" layoutY="327.0" prefHeight="25.0" prefWidth="225.0" visible="false" />
+                  <Label fx:id="editSubLabel" layoutX="31.0" layoutY="373.0" text="Assign Subscription" visible="false" />
+                  <ChoiceBox fx:id="editSub" layoutX="17.0" layoutY="407.0" prefWidth="150.0" visible="false" />
+                  <Button fx:id="editFinish" layoutX="245.0" layoutY="422.0" mnemonicParsing="false" onAction="#editMemberInDatabase" prefHeight="36.0" prefWidth="110.0" text="Finish" visible="false" />
+                  <Label fx:id="delMemberLabel" layoutX="31.0" layoutY="55.0" text="Enter member ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="delMemberSearch" layoutX="4.0" layoutY="83.0" prefHeight="25.0" prefWidth="572.0" />
+                  <TableView fx:id="delMemberTable" layoutX="2.0" layoutY="123.0" prefHeight="256.0" prefWidth="577.0">
+                     <columns>
+                        <TableColumn prefWidth="103.0" text="MemberID" />
+                        <TableColumn prefWidth="122.0" text="Full name">
+                           <columns>
+                              <TableColumn prefWidth="91.0" text="First Name" />
+                              <TableColumn prefWidth="75.0" text="Last name" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="Contact info">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Email" />
+                              <TableColumn prefWidth="75.0" text="Phone number" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="87.0" text="Sub Status" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="delMember" layoutX="126.0" layoutY="425.0" mnemonicParsing="false" onAction="#deleteMemberFromDatabase" prefHeight="40.0" prefWidth="147.0" text="Delete" />
+                  <Button fx:id="delRefresh" layoutX="306.0" layoutY="425.0" mnemonicParsing="false" onAction="#refreshTableView" prefHeight="40.0" prefWidth="147.0" text="Refresh" />
+                  <Button fx:id="viewRefresh" layoutX="232.0" layoutY="453.0" mnemonicParsing="false" onAction="#refreshTableView" prefHeight="25.0" prefWidth="123.0" text="refresh" visible="false" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

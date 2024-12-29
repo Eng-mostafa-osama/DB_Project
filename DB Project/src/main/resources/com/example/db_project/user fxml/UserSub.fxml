@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.db_project.UserSubScreen">
+   <children>
+      <BorderPane layoutX="282.0" layoutY="219.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="329.0" layoutY="-52.0" prefHeight="18.0" prefWidth="800.0" style="-fx-background-color: #D0041C;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <HBox layoutX="198.0" layoutY="27.0" prefHeight="73.0" prefWidth="606.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="27.0">
+                     <children>
+                        <Button fx:id="Subsriptions" mnemonicParsing="false" onAction="#SwitchToSub" prefHeight="73.0" prefWidth="250.0" style="-fx-background-color: white;" styleClass="MenuItems" text="Subsriptions">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/subscription.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="Menu" layoutX="69.0" layoutY="49.0" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MenuBack" layoutX="69.0" layoutY="49.0" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="27.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../application/more.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="Slider" prefHeight="529.0" prefWidth="200.0" style="-fx-background-color: #D0041C;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="50.0" layoutY="21.0" prefHeight="484.0" prefWidth="200.0" style="-fx-background-color: #D0041C;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+                     <children>
+                        <Button fx:id="memberManagement" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToMember" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="Member Managment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/membership.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="Expenses" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="Expenses" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/budget.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logOut" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="198.0" style="-fx-background-color: #D0041C;" styleClass="sideBarItems" text="logout" textFill="WHITE" translateX="2.0" translateY="300.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../application/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <DatePicker fx:id="subDatePicker" layoutX="20.0" layoutY="281.0" promptText="Enter the start date" />
+                  <Label fx:id="subPlanLabel" layoutX="29.0" layoutY="75.0" prefHeight="33.0" prefWidth="164.0" text="Choose which plan">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subDate" layoutX="20.0" layoutY="250.0" text="Enter the start date">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="subPlanChoice" layoutX="22.0" layoutY="127.0" prefHeight="25.0" prefWidth="210.0" />
+                  <Label fx:id="subIdLabel1" layoutX="23.0" layoutY="164.0" text="Enter amount">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="subAmount" layoutX="22.0" layoutY="199.0" prefHeight="25.0" prefWidth="170.0" />
+                  <Button fx:id="subDone" layoutX="259.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleSubDone" prefHeight="31.0" prefWidth="83.0" text="Done!" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class OwnerHomeScreen implements Initializable {
+public class UserHomeScreen implements Initializable {
 
     @FXML
     private Label Menu;
@@ -37,8 +37,6 @@ public class OwnerHomeScreen implements Initializable {
         // Bind methods to the Menu and MenuBack clicks
         Menu.setOnMouseClicked(event -> openMenu());
         MenuBack.setOnMouseClicked(event -> closeMenu());
-
-
     }
 
     // Method to open the menu
@@ -66,38 +64,24 @@ public class OwnerHomeScreen implements Initializable {
     }
 
     @FXML
+    private void SwitchToSub(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user fxml/UserSub.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToMember(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("owner fxml/OwnerHomeMember.fxml")));
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void SwitchToSub(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("owner fxml/OwnerSub.fxml")));
-
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user fxml/UserHomeMember.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
-    public void switchToExpenses(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("OwnerHomeMember.fxml")));
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
-    @FXML
-    public void switchToReport(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("OwnerHomeMember.fxml")));
+    private void Logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homeScreen.fxml")));
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

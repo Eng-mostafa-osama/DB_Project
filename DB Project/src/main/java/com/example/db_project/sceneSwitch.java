@@ -122,7 +122,15 @@ public class sceneSwitch {
                 stmt.setString(7, password);
                 stmt.executeUpdate();
                 System.out.println("User registered successfully!");
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user fxml/UserHomePage.fxml")));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
 
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,52 +142,63 @@ public class sceneSwitch {
     public void validateLogin(ActionEvent event) {
 
         String username = loginName.getText();
-
         String password = loginPassword.getText();
-
-        boolean ownerShip =true;
 
         if (username.isEmpty() || password.isEmpty()) {
             System.out.println("Username or password cannot be empty!");
             errMsg.setVisible(true);
             return;
         }
+
         try (Connection conn = DatabaseConnector.connect()) {
             if (conn == null) {
                 System.out.println("Database connection failed!");
                 return;
             }
-            String query = "SELECT UPassword FROM users WHERE Uusername = ?";
+
+            // First query: Validate username and password
+            String query = "SELECT UserID, UFname, ULname, UPassword, isOwner FROM users WHERE Uusername = ?";
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, username);
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
                     String storedPassword = rs.getString("UPassword");
+                    boolean isOwner = rs.getBoolean("isOwner");
 
                     // Compare stored password with user input
                     if (storedPassword.equals(password)) {
                         System.out.println("Login successful!");
-                        query = "SELECT UPassword FROM users WHERE isOwner = 'true' ";
-                        try (PreparedStatement chkOwner = conn.prepareStatement(query)) {
-                            stmt.setBoolean(1, ownerShip);
-                            ResultSet rsOwner = stmt.executeQuery();
-                        if(rsOwner.next() == true) {
-                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("OwnerHomeScreen.fxml"));
-                            Scene homePage = new Scene(fxmlLoader.load(), 800, 600);
-                            stage.setTitle("AL Ahly jr's ");
-                            stage.setResizable(false);
-                            stage.setScene(homePage);
+
+                        // Save user info into CurrentUser
+                        int userID = rs.getInt("UserID");
+                        String fullName = rs.getString("UFname") + " " + rs.getString("ULname");
+                        CurrentUser.setUserID(userID);
+                        CurrentUser.setUsername(username);
+                        CurrentUser.setFirstName(fullName);
+
+                        if (isOwner) {
+                            // Load OwnerHomeScreen.fxml if the user is an owner
+                            saveCurrentScene(event); // Save the current scene to the stack
+                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("owner fxml/OwnerHomePage.fxml")));
+                            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
                             stage.show();
-                        }}
-                        // Redirect to the next scene or perform actions on successful login
+
+                        } else {
+                            System.out.println("Non-owner login. Redirecting to another screen...");
+                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user fxml/UserHomePage.fxml")));
+                            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            Scene scene = new Scene(root);
+                            stage.setScene(scene);
+                            stage.show();
+                        }
                     } else {
                         System.out.println("Invalid username or password!");
-                        System.out.println("false");
                     }
                 } else {
                     System.out.println("Username not found!");
-                    System.out.println("false");
                 }
             }
         } catch (Exception e) {
@@ -187,6 +206,7 @@ public class sceneSwitch {
             System.out.println("Error during login: " + e.getMessage());
         }
     }
+
 }
 
 
